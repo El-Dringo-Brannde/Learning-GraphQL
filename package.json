@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "graphql-codegen --config codegen.yml && tsc && copyfiles ./src/schemas/*.graphql dist/schemas -f ",
+    "postinstall": "npm run compile",
+    "start": "npm run compile && copyfiles ./src/schemas/*.graphql dist/schemas -f && node ./dist/index.js "
   },
   "repository": {
     "type": "git",
@@ -17,10 +20,19 @@
   },
   "homepage": "https://github.com/El-Dringo-Brannde/Learning-GraphQL#readme",
   "dependencies": {
-    "@graphql-tools/graphql-file-loader": "^7.5.5",
-    "@graphql-tools/load": "^7.7.7",
-    "express": "^4.18.2",
-    "express-graphql": "^0.12.0",
-    "graphql": "^15.8.0"
+    "@apollo/server": "^4.0.0",
+    "graphql": "^16.6.0",
+    "mongodb": "^4.10.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "2.13.7",
+    "@graphql-codegen/introspection": "2.2.1",
+    "@graphql-codegen/typescript": "2.7.4",
+    "@graphql-codegen/typescript-document-nodes": "2.3.4",
+    "@graphql-codegen/typescript-mongodb": "2.4.4",
+    "@graphql-codegen/typescript-resolvers": "2.7.4",
+    "@types/node": "^18.8.5",
+    "copyfiles": "^2.4.1",
+    "typescript": "^4.8.4"
   }
 }
