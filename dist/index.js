@@ -2,7 +2,7 @@ import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
 import { readFileSync } from 'fs';
 import path from 'path';
-import { resolvers } from './resolvers/book.js';
+import { resolvers } from './resolvers/queries.js';
 const server = new ApolloServer({
     typeDefs: readFileSync(path.resolve('./dist', './schemas/book.graphql'), {
         encoding: 'utf-8',
