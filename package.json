@@ -21,6 +21,7 @@
   "homepage": "https://github.com/El-Dringo-Brannde/Learning-GraphQL#readme",
   "dependencies": {
     "@apollo/server": "^4.0.0",
+    "apollo-datasource-mongodb": "^0.5.4",
     "graphql": "^16.6.0",
     "mongodb": "^4.10.0"
   },

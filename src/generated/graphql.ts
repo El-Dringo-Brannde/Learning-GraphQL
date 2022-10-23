@@ -24,8 +24,9 @@ export type AddBookMutationResponse = {
 
 export type Book = {
   __typename?: 'Book';
-  author?: Maybe<Scalars['String']>;
-  title?: Maybe<Scalars['String']>;
+  _id: Scalars['String'];
+  author: Scalars['String'];
+  title: Scalars['String'];
 };
 
 export type Mutation = {
@@ -194,8 +195,9 @@ export type AddBookMutationResponseResolvers<ContextType = any, ParentType exten
 };
 
 export type BookResolvers<ContextType = any, ParentType extends ResolversParentTypes['Book'] = ResolversParentTypes['Book']> = {
-  author?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  title?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  _id?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  author?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
